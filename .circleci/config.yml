@@ -1,9 +1,9 @@
 version: 2.1
 
-workflows:
-  test-deploy:
-    jobs:
-      - test
+# workflows:
+#   test-deploy:
+#     jobs:
+#       - test
 #   scheduled:
 #     triggers:
 #       - schedule:
