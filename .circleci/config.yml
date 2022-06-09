@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs:
+  aws-ecr: circleci/aws-ecr@8.1.2
   terraform: circleci/terraform@3.1.0
 
 workflows:
@@ -19,9 +20,12 @@ workflows:
 #       - test
   test-tf:
     jobs:
-      - terraform/apply:
-          checkout: true
-          path: './deployy'
+#       - terraform/apply:
+#           checkout: true
+#           path: ./deploy
+      - aws-ecr/build-and-push-image:
+          repo: test
+       
 
 jobs:
   test:
