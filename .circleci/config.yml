@@ -19,7 +19,8 @@ workflows:
 #       - test
   test-tf:
     jobs:
-      - terraform/apply
+      - terraform/apply:
+          path: './deploy'
 
 jobs:
   test:
