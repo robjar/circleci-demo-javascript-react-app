@@ -21,7 +21,7 @@ workflows:
     jobs:
       - terraform/apply:
           checkout: true
-          path: './deploy'
+          path: './deployy'
 
 jobs:
   test:
