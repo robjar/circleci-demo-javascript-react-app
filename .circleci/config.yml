@@ -20,6 +20,7 @@ workflows:
   test-tf:
     jobs:
       - terraform/apply:
+          checkout: true
           path: './deploy'
 
 jobs:
