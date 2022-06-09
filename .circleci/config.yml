@@ -1,6 +1,9 @@
 version: 2.1
 
-# workflows:
+orbs:
+  terraform: circleci/terraform@3.1.0
+
+workflows:
 #   test-deploy:
 #     jobs:
 #       - test
@@ -14,10 +17,12 @@ version: 2.1
 #                 - master
 #     jobs:
 #       - test
+  test-tf:
+    jobs:
+      - terraform/apply
 
 jobs:
-#   test:
-  build:
+  test:
     docker:
       - image: cimg/node:14.13.0
     steps:
